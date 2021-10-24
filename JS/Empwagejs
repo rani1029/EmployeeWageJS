@@ -8,7 +8,7 @@
         console.log("UC1 -employee is present");
     }
 }
-//uc 4 - 
+//uc 5 - maximum working day =20 or total working hr =160;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_Hours = 4;
@@ -28,12 +28,13 @@ function getWorkingHr(empCheck) {
 
 }
 let EmpHr = 0;
-const NUM_OF_DAYS = 20;
-for (let day = 0; day < NUM_OF_DAYS; day++) {
+let NUM_OF_DAYS = 0;
+while (NUM_OF_DAYS < 20 || EmpHr == 160) {
 
     let empCheck = Math.floor(Math.random() * 10) % 3;
     EmpHr += getWorkingHr(empCheck);
+    NUM_OF_DAYS++;
 }
 let EmpWage = EmpHr * RATE_PER_HOUR;
-console.log("UC 3 the Employee Wage of in a one month is :" + EmpWage);
+console.log("UC 5 the Employee Wage of in a one month is :" + EmpWage);
 
