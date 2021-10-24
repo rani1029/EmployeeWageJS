@@ -8,26 +8,28 @@
         console.log("UC1 -employee is present");
     }
 }
-//UC2
+//uc 3 - refactor UC2
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_Hours = 4;
 const FULL_TIME_Hours = 8;
 const RATE_PER_HOUR = 200;
+
+function getWorkingHr(empCheck) {
+    switch (empCheck) {
+
+        case FULL_TIME_Hours:
+            return FULL_TIME_Hours;
+        case PART_TIME_Hours:
+            return PART_TIME_Hours;
+        default:
+            return 0;
+    }
+
+}
 let EmpHr = 0;
 let empCheck = Math.floor(Math.random() * 10) % 3;
-switch (empCheck) {
-    case 1:
-        EmpHr = PART_TIME_Hours;
-        console.log("UC 2 Employee is Present Part Time");
-        break;
-    case 2:
-        EmpHr = FULL_TIME_Hours;
-        console.log("UC 2 Employee is Present full Time");
-        break;
-    default:
-        EmpHr = 0;
-}
-console.log("employee is absent ");
+EmpHr = getWorkingHr(empCheck);
 let EmpWage = EmpHr * RATE_PER_HOUR;
-console.log("UC 2 the Employee Wage of the day is :" + EmpWage);
+console.log("UC 3 the Employee Wage of the day is :" + EmpWage);
+
